@@ -1,0 +1,39 @@
+.calendar-wrapper {
+    height: 50vh;
+    width: 90vw;
+    margin: 5px auto;
+}
+
+.chart-wrapper {
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* HEADER */
+
+.navbar-link:hover{
+    margin: 20px 10px;
+    font-weight: 400;
+    color: white;
+   
+    
+}
+
+.h1-header {
+    color: whitesmoke;
+}
+    
+
+.navbar-link{
+    margin: 20px 10px;
+    color: whitesmoke;
+    }
+    
+.menu {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    background-color: #100720;
+}
