@@ -143,3 +143,35 @@
 input{
   margin-bottom: 10px;
 }
+
+/* NOTICIAS */
+
+.news-wrapper {
+  background-color: #3a3c3d;
+  margin: 5px 20px;
+  padding: 5px 10px;
+}
+
+.noticia {
+    margin: auto 0px;
+    background-color: rgb(102, 98, 98);
+    border-radius: 5px;
+    padding: 3px 0px;
+    margin-bottom: 7px;
+}
+
+hr.rounded {
+  border-top: 4px solid #bbb;
+  border-radius: 5px;
+}
+
+.news-title {
+  margin-left: 15px;
+  color: whitesmoke;
+  font-family: chartlabs-font;
+  font-size: 18px;
+}
+
+.news-summary {
+  margin-left: 20px;
+}

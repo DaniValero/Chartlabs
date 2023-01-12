@@ -8,6 +8,12 @@ router.get('/', async (req, res) => {
     res.send(result).status(200)
 })
 
+router.get('/:id_noticia', async(req, res) => {
+
+    const result = await Noticia.find({id_noticia: `${req.params.id_noticia}`})
+    res.send(result).status(200)
+})
+
 router.post('/nueva', validateBody, async (req, res) => {
 
     const noticia = new Noticia(req.body)
@@ -15,6 +21,7 @@ router.post('/nueva', validateBody, async (req, res) => {
 
     res.send(newNoticia).status(200)
 })
+
 
 
 module.exports = router
