@@ -1,4 +1,4 @@
 {
-  "jwtPrivateKey": "TIENDAZON_JWT_PRIVATE_KEY",
+  "jwtPrivateKey": "CHARTLABS_JWT_PRIVATE_KEY",
   "db": "MONGO_URI"
 }

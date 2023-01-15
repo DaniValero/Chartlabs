@@ -10,6 +10,9 @@ require('./startup/db')()
 const registro = require('./routes/registro')
 const noticias = require('./routes/noticias')
 const posts = require('./routes/posts')
+const login = require('./routes/auths')
+
+app.use('/login', login)
 
 app.use('/registro', registro)
 
