@@ -15,7 +15,7 @@ const Chart = () => {
         const getData1 = async () => {
             const resp = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=EURUSD&interval=5min&apikey=6XM9CGKSHR8KSCBS`);
             const data = await resp.json();
-            const metadata = Object.entries(data)[1]
+            const metadata = await Object.entries(data)[1]
             const values = await Object.entries(metadata[1])
 
             // Fechas, recorrer el primer array 
@@ -67,7 +67,7 @@ const Chart = () => {
             const resp = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=GBPUSD&interval=5min&apikey=6XM9CGKSHR8KSCBS`);
             
             const data = await resp.json();
-            const metadata = Object.entries(data)[1]
+            const metadata = await Object.entries(data)[1]
             const values = await Object.entries(metadata[1])
 
             const axisX = []
@@ -107,7 +107,7 @@ const Chart = () => {
             const resp = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=NZDUSD&interval=5min&apikey=6XM9CGKSHR8KSCBS`);
 
             const data = await resp.json();
-            const metadata = Object.entries(data)[1]
+            const metadata = await Object.entries(data)[1]
             const values = await Object.entries(metadata[1])
 
             const axisX = []

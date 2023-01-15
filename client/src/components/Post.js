@@ -12,6 +12,7 @@ const Post = () => {
 
     const handleForm = (e) => {
         e.preventDefault()
+        
         setNewPost({
             id_post: uuidv4(),
             title: title,
@@ -23,11 +24,11 @@ const Post = () => {
     return (
         <>
         <div className='post-wrapper'>
-            <h2 className='post-title'>Login</h2>
+            <h2 className='post-title'>Escribe un comentario</h2>
             
             <form className='post-form'>   
                 <label>Título:</label> <input type="text" id="title" name="title" onChange={(e) => setTitle(e.currentTarget.value)}/>
-                <label>Mensaje:</label> <input type="text" id="content" name="content" onChange={(e) => setContent(e.currentTarget.value)}/>
+                <label>Mensaje:</label> <textarea cols = "50" id="content" name="content" onChange={(e) => setContent(e.currentTarget.value)}/>
                 <button className='form-button' onSubmit={(e) => handleForm(e)}>Enviar</button>
             </form>
         </div>

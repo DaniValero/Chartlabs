@@ -1,6 +1,7 @@
 const {Noticia, validateBody} = require('../models/noticia')
 const express = require('express')
 const router = express.Router()
+const {Post} = require('../models/post')
 
 router.get('/', async (req, res) => {
 
@@ -11,7 +12,18 @@ router.get('/', async (req, res) => {
 router.get('/:id_noticia', async(req, res) => {
 
     const result = await Noticia.find({id_noticia: `${req.params.id_noticia}`})
+ 
     res.send(result).status(200)
+})
+
+
+router.post('/:id_noticia', validateBody, async (req, res) => {
+  
+    const post = new Post(req.body);
+  
+    const newPost = await post.save();
+  
+    res.send(newPost).status(200)
 })
 
 router.post('/nueva', validateBody, async (req, res) => {

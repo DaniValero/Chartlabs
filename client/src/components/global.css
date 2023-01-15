@@ -1,14 +1,17 @@
 .calendar-wrapper {
-    height: 50vh;
-    width: 85vw;
-    margin: 10px auto;
+}
+
+#economicCalendarWidget {
+  height: 400px;
+  width: 80%;
+  margin: 20px auto;
 }
 
 .chart {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    background-color: #6C757D;
+    background-color: #7894ac;
     border-radius: 5px;
     padding-left: 15px;
     padding-right: 10px;
@@ -105,7 +108,7 @@
     justify-content: space-between;
     display: flex;
     flex-direction: row;
-    background-color: #171010;
+    background-color: #0f0220;
 }
 
 .wrapper-header {
@@ -150,14 +153,50 @@ input{
   background-color: #3a3c3d;
   margin: 5px 20px;
   padding: 5px 10px;
+  border-radius: 5px;
+  width: 90vw;
 }
 
+
 .noticia {
-    margin: auto 0px;
-    background-color: rgb(102, 98, 98);
-    border-radius: 5px;
-    padding: 3px 0px;
-    margin-bottom: 7px;
+  margin: 0 auto;
+  width: 80vw;
+  background-color: rgb(102, 98, 98);
+  border-radius: 5px;
+  padding: 3px 0px;
+  margin-bottom: 7px;
+  padding:10px;
+
+}
+
+.img-wrapper{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+
+.noticias-img{
+  max-width: 20vw;
+  border-radius: 5px;
+}
+
+.noticia-dinamica-img {
+  max-width: 40vw;
+  border-radius: 5px;
+  margin: 0px auto;
+}
+
+.noticia-dinamica {
+  margin: 10px auto;
+  width: 80vw;
+  background-color: rgb(102, 98, 98);
+  border-radius: 5px;
+  margin-bottom: 7px;
+  padding:10px;
+  display: flex;
+  flex-direction: column;
 }
 
 hr.rounded {
@@ -169,9 +208,54 @@ hr.rounded {
   margin-left: 15px;
   color: whitesmoke;
   font-family: chartlabs-font;
-  font-size: 18px;
+  font-size: 22px;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.noticia-dinamica-title {
+  margin-left: 15px;
+  color: whitesmoke;
+  font-family: chartlabs-font;
+  font-size: 20px;
+  justify-content: center;
 }
 
 .news-summary {
   margin-left: 20px;
+}
+
+.noticia-dinamica-summary {
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+/* POSTS  */
+
+.post-wrapper {
+  background-color: rgb(124, 120, 120);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80vw;
+}
+
+.post-title {
+  margin-left: 15px;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 15px;
+  justify-content: space-evenly;
+}
+
+#content{
+  min-height: 20vh;
+}
+.form-button {
+  max-width: 10vw;
 }

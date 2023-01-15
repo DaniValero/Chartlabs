@@ -5,10 +5,18 @@ const _ = require("lodash");
 const mongoose = require("mongoose");
 const validator = require("../middleware/joiValidator");
 
+const commentsSchema = new mongoose.Schema({
+  user_id: String, 
+  username: String,
+  content: String,
+  date: Date,
+})
+
 const userSchema = new mongoose.Schema({
-  name: {
+  username: {
     type: String,
     required: true,
+    unique: true
   },
   email: {
     type: String,
@@ -20,6 +28,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   isAdmin: Boolean,
+  comments: [commentsSchema]
 });
 
 userSchema.methods.generateToken = function () {
@@ -32,7 +41,7 @@ userSchema.methods.generateToken = function () {
 const User = mongoose.model("User", userSchema);
 
 const reqSchema = Joi.object({
-  name: Joi.string()
+  username: Joi.string()
     .required()
     .messages({ "any.required": `El campo "name" es requerido` }),
   email: Joi.string()

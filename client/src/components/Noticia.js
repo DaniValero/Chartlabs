@@ -4,7 +4,7 @@ import Post from "./Post";
 import {useParams} from 'react-router-dom'
 
 
-const Noticia = ({props}) => {
+const Noticia = () => {
 
     const [noticia, setNoticia] = useState([])
     const routeParams = useParams()
@@ -14,25 +14,24 @@ const Noticia = ({props}) => {
         const getNoticia = async () => {
 
             const resp = await fetch(`http://www.localhost:5000/noticias/${routeParams.id_noticia}`);
-            console.log(resp)
             const data = await resp.json();
-            
             setNoticia(data[0])
-            console.log(noticia)
         }
         getNoticia()
     }, [])
 
+
     return (
         <>
      
-        <div className='noticia'>
-            <h3>{noticia.title}</h3>                      
-            <p className='news-summary'>{noticia.content}</p>
+        <div className='noticia-dinamica'>
+            <h3 className='noticia-dinamica-title'>{noticia.title}</h3> 
+            <img className='noticia-dinamica-img' src={noticia.img} alt="Imagen de la noticia"></img>                     
+            <p className='noticia-dinamica-title'>{noticia.content}</p>
         </div>
 
 
-        {/* <Post/> */}
+        <Post/>
         </>
     )
 }

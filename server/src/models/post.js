@@ -15,7 +15,7 @@ const postSchema = new mongoose.Schema({
   },
   id_post: {
     type: String,
-    required: true,
+    required: false,
     unique: true,
   },
   id_noticia: {
