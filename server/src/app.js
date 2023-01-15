@@ -8,7 +8,13 @@ require('./startup/db')()
 
 
 const registro = require('./routes/registro')
+const noticias = require('./routes/noticias')
+const posts = require('./routes/posts')
 
-app.post('/registro', registro)
+app.use('/registro', registro)
 
-app.listen(3000, () => console.log("Esto no hay quien lo remonte"))
+app.use('/noticias', noticias)
+
+app.use('/post', posts)
+
+app.listen(5000, () => console.log("Reptiliano afroamericano"))

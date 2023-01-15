@@ -1,17 +1,86 @@
 .calendar-wrapper {
-    height: 50vh;
-    width: 90vw;
-    margin: 5px auto;
+}
+
+#economicCalendarWidget {
+  height: 400px;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: #7894ac;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+   box-shadow: rgba(255, 255, 255, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .chart-wrapper {
     height: 30vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
+.currency-title {
+    margin: 0px auto;
+}
+
+/* SPINNER */
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
 
 /* HEADER */
+
+@font-face {
+	font-family: menu-font;
+	src: url(../../../resources/Forque.ttf)
+}
+
+.logo-header {
+    width: 125px;
+    height: auto;
+    margin: -15px 10px;
+}
 
 .navbar-link:hover{
     margin: 20px 10px;
@@ -29,11 +98,164 @@
 .navbar-link{
     margin: 20px 10px;
     color: whitesmoke;
-    }
+    font-size: 1.75rem;
+    letter-spacing: 0.1rem;
+    font-family: menu-font;
+}
+
     
 .menu {
     justify-content: space-between;
     display: flex;
     flex-direction: row;
-    background-color: #100720;
+    background-color: #0f0220;
+}
+
+.wrapper-header {
+    margin: auto 0;
+}
+
+/* REGISTRO */
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+  max-width: 25vw;
+  flex-direction: column;
+  background-color: #3b3b3b;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius:  5px;
+}
+
+.login-title {
+  margin: 10px auto;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 5px auto;
+  justify-content: space-evenly;
+}
+
+.form-button {
+  margin: 10px 0;
+}
+
+input{
+  margin-bottom: 10px;
+}
+
+/* NOTICIAS */
+
+.news-wrapper {
+  background-color: #3a3c3d;
+  margin: 5px 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 90vw;
+}
+
+
+.noticia {
+  margin: 0 auto;
+  width: 80vw;
+  background-color: rgb(102, 98, 98);
+  border-radius: 5px;
+  padding: 3px 0px;
+  margin-bottom: 7px;
+  padding:10px;
+
+}
+
+.img-wrapper{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+
+.noticias-img{
+  max-width: 20vw;
+  border-radius: 5px;
+}
+
+.noticia-dinamica-img {
+  max-width: 40vw;
+  border-radius: 5px;
+  margin: 0px auto;
+}
+
+.noticia-dinamica {
+  margin: 10px auto;
+  width: 80vw;
+  background-color: rgb(102, 98, 98);
+  border-radius: 5px;
+  margin-bottom: 7px;
+  padding:10px;
+  display: flex;
+  flex-direction: column;
+}
+
+hr.rounded {
+  border-top: 4px solid #bbb;
+  border-radius: 5px;
+}
+
+.news-title {
+  margin-left: 15px;
+  color: whitesmoke;
+  font-family: chartlabs-font;
+  font-size: 22px;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.noticia-dinamica-title {
+  margin-left: 15px;
+  color: whitesmoke;
+  font-family: chartlabs-font;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.news-summary {
+  margin-left: 20px;
+}
+
+.noticia-dinamica-summary {
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+/* POSTS  */
+
+.post-wrapper {
+  background-color: rgb(124, 120, 120);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80vw;
+}
+
+.post-title {
+  margin-left: 15px;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 15px;
+  justify-content: space-evenly;
+}
+
+#content{
+  min-height: 20vh;
+}
+.form-button {
+  max-width: 10vw;
 }

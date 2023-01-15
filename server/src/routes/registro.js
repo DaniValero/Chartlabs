@@ -1,18 +1,24 @@
-const {User, validateBody} = require('../models/users')
+const {User, validateBody} = require('../models/user')
 const express = require('express')
 const bcrypt = require("bcrypt");
-
 const router = express.Router()
 
 router.post('/registro', validateBody, async (req, res) => {
 
-    console.log(req.body)
-    
-    const user = new User (req.body)
-
-    const newUser = await user.save()
-
-    res.send("Se ha creado el usuario" + newUser).status(200)
+    let user = await User.findOne({ email: req.body.email });
+    if (user) return res.status(400).send("El usuario ya está registrado");
+  
+    user = new User(req.body);
+  
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(user.password, salt);
+  
+    user.password = hash;
+  
+    await user.save();
+  
+    const token = user.generateToken();
+    res.header("x-auth-token", token).send("Usuario autentificado");
 })
 
 
