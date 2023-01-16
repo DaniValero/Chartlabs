@@ -4,9 +4,23 @@ const mongoose = require("mongoose");
 const validator = require("../middleware/joiValidator");
 
 const postSchema = new mongoose.Schema({
-  title: String,
-  content: String,
-  date: Date,
+  title: {
+    type: String,
+    required: true,
+  },
+  content: {
+    type: String,
+    required: true,
+  },
+  id_post: {
+    type: String,
+    required: false,
+    unique: true,
+  },
+  username: {
+    type: String,
+    unique: true
+  }
 })
 
 const noticiaSchema = new mongoose.Schema({
@@ -18,15 +32,14 @@ const noticiaSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  img: {
-    type: String,
-  },
   id_noticia: {
     type: String,
     required: true,
-    unique: true
   },
-  posts: [{ type: new mongoose.Schema({postSchema})}]
+  img: {
+    type: String,
+  },
+  posts: [{ type: postSchema}]
 
 });
 
