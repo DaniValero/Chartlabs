@@ -9,13 +9,15 @@ const Noticia = () => {
     const [noticia, setNoticia] = useState([])
     const routeParams = useParams()
 
-
     useEffect(() => {
         const getNoticia = async () => {
 
             const resp = await fetch(`http://www.localhost:5000/noticias/${routeParams.id_noticia}`);
             const data = await resp.json();
-            setNoticia(data[0])
+
+            data.map((element) => (
+                element.id_noticia === routeParams.id_noticia? setNoticia(element) : "Cargando..."
+            ))
         }
         getNoticia()
     }, [])
@@ -30,8 +32,21 @@ const Noticia = () => {
             <p className='noticia-dinamica-title'>{noticia.content}</p>
         </div>
 
+        
+        <Post noticia={noticia}/>
 
-        <Post/>
+        <div className='comments-wrapper'>
+            {noticia.posts? noticia.posts.map((e) => (
+                
+                <div className='comments' key={e.id_post}>
+                    <h4 className='comments-title'>{e.title}</h4>
+                    <p className='comments-content'>{e.content}</p>
+                </div>
+            
+            )) : "Cargando"}
+
+        </div>
+
         </>
     )
 }

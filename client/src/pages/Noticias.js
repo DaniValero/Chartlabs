@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './global.css'
+import '../components/global.css'
 import { Link } from 'react-router-dom'
 
 const Noticias = () => {

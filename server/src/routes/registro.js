@@ -3,7 +3,9 @@ const express = require('express')
 const bcrypt = require("bcrypt");
 const router = express.Router()
 
-router.post('/registro', validateBody, async (req, res) => {
+router.post('/', validateBody, async (req, res) => {
+
+    console.log("registro")
 
     let user = await User.findOne({ email: req.body.email });
     if (user) return res.status(400).send("El usuario ya está registrado");
@@ -18,7 +20,10 @@ router.post('/registro', validateBody, async (req, res) => {
     await user.save();
   
     const token = user.generateToken();
-    res.header("x-auth-token", token).send("Usuario autentificado");
+    res
+    .header("x-auth-token", token)
+    .header("access-control-expose-headers", "x-auth-token")
+    .send("Usuario autentificado");
 })
 
 
