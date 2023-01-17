@@ -6,6 +6,7 @@ import Login from '../pages/Login'
 import News from '../pages/Noticias'
 import NoticiaD from '../pages/NoticiaD';
 import Logout from "../pages/Logout";
+import Registro from '../pages/Registro'
 
 import ProtectedRoute from "../utils/ProtectedRoute";
 
@@ -20,6 +21,14 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/noticias",
+        element: <News />,
+      },
+      {
+        path: "/noticias/:id_noticia",
+        element: <NoticiaD />,
+      },
+      {
         path: "/login",
         element: (
           <ProtectedRoute isAllowed={"isNotAuth"}>
@@ -28,12 +37,12 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/noticias",
-        element: <News />,
-      },
-      {
-        path: "/noticias/:id_noticia",
-        element: <NoticiaD />,
+        path: "/registro",
+        element: (
+          <ProtectedRoute isAllowed={"isNotAuth"}>
+            <Registro />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/logout",
@@ -43,9 +52,8 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      
     ],
   },
 ]);
 
-export default router
+export default router;

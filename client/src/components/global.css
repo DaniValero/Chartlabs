@@ -114,7 +114,7 @@ svg {
     margin: auto 0;
 }
 
-/* REGISTRO */
+/* REGISTRO - LOGIN*/
 
 .login-wrapper {
   display: flex;
@@ -198,6 +198,17 @@ transform: translateX(0.1em);
 .cssbuttons-io-button:active .icon {
 transform: scale(0.95);
 }
+
+.registro-link-wrapper {
+  display:flex; 
+  justify-content: center;
+}
+
+.registro-link {
+  color: whitesmoke;
+  font-size: 18px;
+}
+
  
 /* NOTICIAS */
 

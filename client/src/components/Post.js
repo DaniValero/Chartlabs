@@ -3,7 +3,7 @@ import './global.css'
 import { v4 as uuidv4 } from "uuid";
 import {useParams} from 'react-router-dom'
 
-const Post = ({noticia}) => {
+const Post = () => {
 
     const [content, setContent] = useState("")
     const [title, setTitle] = useState("")
@@ -29,13 +29,13 @@ const Post = ({noticia}) => {
         },
         body: JSON.stringify(newPost),
         })
-        // .then((response) => response.json())
-        // .then((data) => {
-        //     console.log('Success:', data);
-        // })
-        // .catch((error) => {
-        //     console.error('Error:', error);
-        // })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        })
     }
     
     return (
