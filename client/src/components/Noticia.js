@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react'
 import './global.css'
 import Post from "./Post";
 import {useParams} from 'react-router-dom'
+import AuthConsumer from "../hooks/useAuth";   
+import {Link} from 'react-router-dom'
+import user from "../services/userService";
 
 
 const Noticia = () => {
 
     const [noticia, setNoticia] = useState([])
     const routeParams = useParams()
+    const [{ isAuth }] = AuthConsumer()
 
     useEffect(() => {
         const getNoticia = async () => {
@@ -22,7 +26,6 @@ const Noticia = () => {
         getNoticia()
     }, [])
 
-
     return (
         <>
      
@@ -32,14 +35,18 @@ const Noticia = () => {
             <p className='noticia-dinamica-title'>{noticia.content}</p>
         </div>
 
-        
-        <Post noticia={noticia}/>
+        {isAuth && (<Post noticia={noticia}/>)}
+
+        {!isAuth && (
+        <div>
+            <h3><Link to={`/login`} className='login-link'>Inicia sesión</Link> para dejar un comentario</h3>
+        </div>)}
 
         <div className='comments-wrapper'>
             {noticia.posts? noticia.posts.map((e) => (
                 
                 <div className='comments' key={e.id_post}>
-                    <h4 className='comments-title'>{e.title}</h4>
+                    <div className='comment-header'><h4 className='comments-title'>{e.title}</h4> <p className='comment-author'>- Escrito por {user.getCurrentUser().username}</p></div>
                     <p className='comments-content'>{e.content}</p>
                 </div>
             

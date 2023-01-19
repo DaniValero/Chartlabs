@@ -157,7 +157,8 @@ const Chart = () => {
                 <h3 className='currency-title'>EUR/USD</h3>
                 
                 {data1.length ?
-                <VictoryChart>
+                <VictoryChart domainPadding={30}>
+
                     
                     {data1[0].map((e, index) => (
                         
@@ -180,7 +181,7 @@ const Chart = () => {
             <div className='chart' key={2}>
                 <h3 className='currency-title'>GBP/USD</h3>
                 {data2.length ?
-                <VictoryChart>
+                <VictoryChart domainPadding={30}>
                     
                     {data2[0].map((e, index) => (
                         
@@ -202,7 +203,7 @@ const Chart = () => {
             <div className='chart' key = {3}>
                 <h3 className='currency-title'>NZD/USD</h3>
                 {data3.length ?
-                <VictoryChart>
+                <VictoryChart domainPadding={30}>
                     
                     {data3[0].map((e, index) => (
                         

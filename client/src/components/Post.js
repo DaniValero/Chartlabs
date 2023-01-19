@@ -2,32 +2,28 @@ import React, {useState} from 'react'
 import './global.css'
 import { v4 as uuidv4 } from "uuid";
 import {useParams} from 'react-router-dom'
+import user from "../services/userService";
 
 const Post = () => {
 
     const [content, setContent] = useState("")
     const [title, setTitle] = useState("")
-
-    const [newPost, setNewPost] = useState({})
     const routeParams = useParams()
 
-    const handleForm = (e) => {
-
-        e.preventDefault()
-
-        setNewPost({
-            id_post: uuidv4(),
-            title: title,
-            content: content,
-        })
-
+    const handleForm = async (e) => {
+        
         fetch(`http://www.localhost:5000/noticias/${routeParams.id_noticia}`, 
         
         {method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(newPost),
+        body: JSON.stringify({
+            id_post: uuidv4(),
+            title: title,
+            content: content,
+            username: user.getCurrentUser().username
+        }),
         })
         .then((response) => response.json())
         .then((data) => {
@@ -37,7 +33,7 @@ const Post = () => {
             console.error('Error:', error);
         })
     }
-    
+  
     return (
         <>
         <div className='post-wrapper'>

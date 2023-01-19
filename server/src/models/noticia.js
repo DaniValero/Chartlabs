@@ -18,8 +18,7 @@ const postSchema = new mongoose.Schema({
     unique: true,
   },
   username: {
-    type: String,
-    unique: true
+    type: String
   }
 })
 

@@ -20,7 +20,7 @@ router.get('/:id_noticia', async(req, res) => {
 
 router.put('/:id_noticia', async (req, res) => {
   
-
+    console.log(req.body)
     const newPost = await Noticia.findOneAndUpdate({id_noticia: req.params.id_noticia}, {$push: {posts: req.body}})
 
     res.send(newPost).status(200)  

@@ -1,22 +1,27 @@
 import React, {useState} from 'react'
 import '../components/global.css'
 import user from "../services/userService";
-import {Link} from 'react-router-dom'
+import AuthConsumer from "../hooks/useAuth";
+import {Link, useNavigate} from 'react-router-dom'
 
 const Logins = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    
+    const navigate = useNavigate()
+    const [, dispatch] = AuthConsumer();
+
         let account = {
             email : email,
             password: password
         }
 
     const handleForm = async (e) => {
-
-        console.log(account)
+        e.preventDefault()
      
-        await user.login(account);
+        const { isAdmin } = await user.login(account);
+
+        dispatch({ type: isAdmin ? "admin" : "login" });
+        navigate("/")
     }
     
     return (
