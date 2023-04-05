@@ -172,7 +172,7 @@ const Chart = () => {
 
                         />
                     ))}
-                </VictoryChart> : <><div class="lds-ring"><div></div><div></div><div></div></div><div><p>Cargando...</p></div></>
+                </VictoryChart> : <><div className="lds-ring"><div></div><div></div><div></div></div><div><p>Cargando...</p></div></>
                     
                 }
                
@@ -195,7 +195,7 @@ const Chart = () => {
 
                         />
                     ))}
-                </VictoryChart> : <><div class="lds-ring"><div></div><div></div><div></div></div><div><p>Cargando...</p></div></>
+                </VictoryChart> : <><div className="lds-ring"><div></div><div></div><div></div></div><div><p>Cargando...</p></div></>
                     
                 }
             </div>
@@ -217,7 +217,7 @@ const Chart = () => {
 
                         />
                     ))}
-                </VictoryChart> : <><div class="lds-ring"><div></div><div></div><div></div></div><div><p>Cargando...</p></div></>
+                </VictoryChart> : <><div className="lds-ring"><div></div><div></div><div></div></div><div><p>Cargando...</p></div></>
                     
                 }
             </div>

@@ -8,6 +8,7 @@ const Header = () => {
 
     const [{ isAuth }] = AuthConsumer();
 
+
     return (
         <nav className='menu'>
             <Link to={`/`} className='navbar-link'><img src={Img} alt="Web logo" className='logo-header'/></Link>
