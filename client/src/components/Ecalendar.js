@@ -1,11 +1,9 @@
-import React, { useEffect, componentDidMount } from "react";
-import { useLocation } from 'react-router-dom';
-
+import React, { useEffect } from "react";
 import './global.css'
 
 const Ecalendar = () => {
 
-    // This fixzes the issue of the calendar not showing when navigating back to the homepage
+    // This fixes the issue of the calendar not showing when navigating back to the homepage
 
     useEffect(() => {
         const reloadCount = sessionStorage.getItem('reloadCount');
@@ -39,11 +37,6 @@ const Ecalendar = () => {
 
    
   
-       
-   
-
-
-
   return (
     <div className="calendar-wrapper">
         <div id="economicCalendarWidget"></div>
