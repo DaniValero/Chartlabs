@@ -3,7 +3,7 @@
 
 Financial web app that displays the economic calendar and 3 real-time forex charts updated every 5 minutes.
 
-It has a news section where users can login to post and discuss on each entry and a CRUD is implemented.
+It has a news section where users can login to post and discuss on each entry and a CRUD is implemented. (This section still in development)
 
 ## Screenshots
 
