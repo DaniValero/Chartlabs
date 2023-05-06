@@ -18,7 +18,8 @@ router.post('/', validateBody, async (req, res) => {
     user.password = hash;
   
     await user.save();
-  
+    
+
     const token = user.generateToken();
     res
     .header("x-auth-token", token)

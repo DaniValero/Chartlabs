@@ -233,7 +233,7 @@ transform: scale(0.95);
 .noticia {
   margin: 0 auto;
   width: 80vw;
-  background-color: #435c68e7;
+  background-color: #25252d;
   border-radius: 5px;
   padding: 3px 0px;
   margin-bottom: 7px;
@@ -314,7 +314,7 @@ hr.rounded {
 
 .comments {
   margin-top: 5px;
-  background-color: #4b6674;
+  background-color: #25252d;
   border-radius: 5px;
   margin: 5px;
 }
@@ -347,7 +347,7 @@ hr.rounded {
 /* POSTS FORM */
 
 .post-wrapper {
-  background-color: #1B1B1B;
+  background-color: #25252d;
   border-radius: 5px;
   display: flex;
   flex-direction: column;

@@ -62,7 +62,8 @@ const reqSchema = Joi.object({
     .required()
     .messages({ "any.required": `El campo "contenido" es requerido` }),
   id_noticia: Joi.string()
-  .required()
+    .required()
+    .messages({ "any.required": `El campo "id_noticia" es requerido` })
 
 });
 

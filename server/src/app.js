@@ -1,12 +1,7 @@
 const express = require('express')
-const cors = require('cors')
-const app = express()
-app.use(cors())
-
 require('dotenv').config()
 
-
-const helmet = require("helmet");
+const app = express()
 
 require('./startup/routes')(app)
 require('./startup/db')()

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { VictoryChart, VictoryCandlestick } from 'victory';
+import { VictoryChart, VictoryCandlestick, VictoryAxis } from 'victory';
 import './global.css'
 
 const Chart = () => {
@@ -144,9 +144,7 @@ const Chart = () => {
 
 
         }
-        getData1()
-        getData2()
-        getData3()
+        getData1() && getData2() && getData3()
     }, [])
 
 
@@ -158,6 +156,19 @@ const Chart = () => {
                 
                 {data1.length ?
                 <VictoryChart domainPadding={30}>
+                    <VictoryAxis
+                        style={{
+                        axis: { stroke: 'white' }, // change color of x-axis
+                        tickLabels: { fill: 'none' }, // change color of x-axis labels
+                        }}
+                    />
+                    <VictoryAxis
+                        dependentAxis
+                        style={{
+                        axis: { stroke: 'white' }, // change color of y-axis
+                        tickLabels: { fill: 'white' }, // change color of y-axis labels
+                        }}
+                    />
 
                     
                     {data1[0].map((e, index) => (
@@ -165,12 +176,11 @@ const Chart = () => {
                         <VictoryCandlestick className="candle"
                         candleColors={{positive: "#c43a31", negative: "#63d168" }}
                         candleWidth={4}
+                        colorScale={['#FF0000', '#00FF00']}
                         data={[
                             {x: e, open: +data1[1][index][0][1], close: +data1[1][index][3][1], high: +data1[1][index][1][1], low: +data1[1][index][2][1]},
         
-                        ]} 
-
-                        />
+                        ]}/>
                     ))}
                 </VictoryChart> : <><div className="lds-ring"><div></div><div></div><div></div></div><div><p>Cargando...</p></div></>
                     
@@ -182,6 +192,20 @@ const Chart = () => {
                 <h3 className='currency-title'>GBP/USD</h3>
                 {data2.length ?
                 <VictoryChart domainPadding={30}>
+
+                    <VictoryAxis
+                        style={{
+                        axis: { stroke: 'white' }, // change color of x-axis
+                        tickLabels: { fill: 'none' }, // change color of x-axis labels
+                        }}
+                    />
+                    <VictoryAxis
+                        dependentAxis
+                        style={{
+                        axis: { stroke: 'white' }, // change color of y-axis
+                        tickLabels: { fill: 'white' }, // change color of y-axis labels
+                        }}
+                    />
                     
                     {data2[0].map((e, index) => (
                         
@@ -192,7 +216,6 @@ const Chart = () => {
                             {x: e, open: +data2[1][index][0][1], close: +data2[1][index][3][1], high: +data2[1][index][1][1], low: +data2[1][index][2][1]}
         
                         ]} 
-
                         />
                     ))}
                 </VictoryChart> : <><div className="lds-ring"><div></div><div></div><div></div></div><div><p>Cargando...</p></div></>
@@ -203,7 +226,20 @@ const Chart = () => {
             <div className='chart' key = {3}>
                 <h3 className='currency-title'>NZD/USD</h3>
                 {data3.length ?
-                <VictoryChart domainPadding={30}>
+                <VictoryChart domainPadding={30} >
+                    <VictoryAxis
+                        style={{
+                        axis: { stroke: 'white' }, // change color of x-axis
+                        tickLabels: { fill: 'none' }, // change color of x-axis labels
+                        }}
+                    />
+                    <VictoryAxis
+                        dependentAxis
+                        style={{
+                        axis: { stroke: 'white' }, // change color of y-axis
+                        tickLabels: { fill: 'white' }, // change color of y-axis labels
+                        }}
+                    />
                     
                     {data3[0].map((e, index) => (
                         
@@ -214,7 +250,6 @@ const Chart = () => {
                             {x: e, open: +data3[1][index][0][1], close: +data3[1][index][3][1], high: +data3[1][index][1][1], low: +data3[1][index][2][1]}
         
                         ]} 
-
                         />
                     ))}
                 </VictoryChart> : <><div className="lds-ring"><div></div><div></div><div></div></div><div><p>Cargando...</p></div></>
