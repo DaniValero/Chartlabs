@@ -5,6 +5,13 @@ Financial web app that displays the economic calendar and 3 real-time forex char
 
 It has a news section where users can login to post and discuss on each entry and a CRUD is implemented.
 
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/114396949/236615772-d0c5238e-d40e-419d-9197-a6ccd54e8bbc.png)
+
+![image](https://user-images.githubusercontent.com/114396949/236615946-d1710ab3-9542-481a-98b5-89fcd8f47556.png)
+
+
 
 
 
